@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A Shimazu Tech é uma empresa de fundo de garagem com o objetivo de ajudar pacientes com 
+  transtorno mental">
+  <meta name="keywords" content="Doença mental, psiquiatria, psiquiátrico, saude mental, psicologia, I.A, Shimazu, Tech, Shimazu Tech
+  ,Inteligência">
+  <title>Shimazu Tech</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto; /* Permite rolagem vertical */
+  margin: 0;
+  padding: 0;
+}
+
+/* Definindo o fundo fixo para o html */
+html {
+  background: url(img/bgj.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Definindo o fundo animado para o body */
+body {
+  background: url('img/snow.gif') repeat left;
+  background-size: auto;
+}
+
+/* Adicionando estilos para dispositivos móveis */
+@media (max-width: 767px) {
+  html {
+    width: 100%;
+    height: 100%;
+    background-attachment:scroll; /* Mantém fixo em mobile */
+    position: fixed;
+  }
+  body {
+    width: 100%;
+    height: 100%;
+    background-attachment:scroll; /* Mantém fixo em mobile */
+    position: fixed;
+  }
+}
+    .header {
+      background-size: cover;
+      height: 35vh;
+      color: transparent;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    
+    .header h1 {
+      font-size: 3.5rem;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .header p {
+      font-size: 1.5rem;
+    }
+    .about,
+    .gallery,
+    .contact {
+      padding: 60px 0;
+    }
+    .footer {
+      background-color: transparent;
+      color: white;
+      text-shadow: black 2px 2px 2px;
+      text-align: center;
+      bottom: 0;
+      width: 99%;
+      padding: 10px 0;
+    }
+    /* Estilos para o menu fixo */
+    .menu-fixed {
+      top: 0;
+      right:-50px;
+      width: 100%;
+      background-color: transparent;
+      z-index: 1000;
+      padding: 10px 0;
+    }
+    .menu-fixed .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .menu-fixed .logo {
+      flex: 1;
+      margin-left: 0px;
+    }
+    .menu-fixed .logo img {
+      height: 50px; /* Ajuste conforme necessário */
+    }
+    .menu-fixed .menu-items {
+      flex: 2;
+      text-align: right;
+      margin-right: 20px;
+    }
+    .menu-fixed .menu-items a {
+      color: white;
+      text-decoration: none;
+      top: 100px;
+      margin-left: 20px;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+    .menu-fixed .menu-items a:hover {
+      color: aqua;
+    }
+    /* Estilos para o menu de toggle responsivo */
+   /* Estilos para o menu de toggle responsivo */
+.menu-toggle {
+  display: none; /* Esconder por padrão em telas maiores */
+  width: 99%;
+}
+.menu-toggle .menu-icon {
+  display: block;
+  text-align: right;
+  padding: 5px 0px;
+  cursor: pointer;
+}
+ .menu-text {
+  text-align: left;
+  padding: 5px 0px;
+  cursor: pointer;
+}
+.menu-icon {
+    display: flex;
+    align-items: center;
+}
+.menu-toggle .menu-icon img {
+  height: 35px; /* Ajuste conforme necessário */
+}
+.menu-toggle .menu-dropdown {
+  position: fixed;
+  top: 50px;
+  right: 0;
+  background-color: white;
+  width: 170px; /* Ajuste para cobrir toda a largura */
+  opacity: 0.7;
+  z-index: 1500;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  border-radius: 10px; /* Deixa o menu arredondado */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra */
+}
+
+.menu-toggle .menu-dropdown.open {
+  transform: translateX(0);
+}
+.menu-toggle .menu-dropdown ul {
+  list-style-type: none;
+  padding: 20px;
+  margin: 0;
+  text-align: center; /* Centralizar os itens */
+}
+.menu-toggle .menu-dropdown ul li {
+  margin-bottom: 30px;
+}
+.menu-toggle .menu-dropdown ul li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+.menu-toggle .menu-dropdown ul li a:hover {
+  color: aqua;
+}
+/* Estilos específicos para telas menores */
+@media (max-width: 768px) {
+  .menu-fixed {
+    display: none; /* Esconder menu fixo em telas menores */
+  }
+  .menu-toggle {
+    display: block; /* Mostrar menu de toggle em telas menores */
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2000;
+    padding: 10px;
+  }
+}
+.contact-row {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+  }
+
+  .contact-item {
+      flex: 1;
+      margin: 10px;
+      text-align: center;
+  }
+
+  .circle img {
+      border-radius: 50%;
+      width: 300px;
+      height: 300px;
+  }
+  .icarus{
+    visibility: visible; /* Garante que o elemento seja visível */
+  display: inline;
+  text-align: left;
+  position: relative;
+  }
+ 
+  @media (max-width: 768px) {
+      .contact-item {
+          flex-basis: 100%;
+      }
+
+      .contact-item:not(:last-child) {
+          margin-bottom: 20px;
+      }
+  }
+
+  @media (max-width: 480px) {
+      p {
+          font-size: 16px !important;
+      }
+
+      .circle img {
+          width: 300px;
+          height: 300px;
+      }
+  }
+
+.contact-item p {
+  margin: 0;
+}
+.fly-contact {
+  background-image: url('img/background.jpg'); /* Imagem de fundo com tema japonês */
+  background-size: cover;
+  background-position: center;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fly-contact h2 {
+  font-family: 'Sawarabi Mincho', serif; /* Fonte japonesa elegante */
+  color: #d32f2f; /* Vermelho típico japonês */
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form label {
+  text-align: left;
+  font-weight: bold;
+  color: #555;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 99%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #d32f2f;
+  outline: none;
+}
+
+.contact-form button {
+  background-color:transparent;
+
+}
+#preloader {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      background: #fff url('img/load.gif') no-repeat center center;
+    }
+    .custom-iframe {
+  width: 560px; /* Define a largura como 100% do contêiner pai */
+  height: 315px; /* Altura fixa */
+  max-width: 800px; /* Define uma largura máxima */
+  aspect-ratio: 16 / 9; /* Mantém a proporção de 16:9 */
+}
+@media (max-width: 800px) {
+  .custom-iframe {
+  width: 100%; /* O iframe ocupa 100% da largura da tela */
+  height: auto; /* A altura será ajustada automaticamente */
+  text-align: center;
+  max-width: 512px; /* Limite máximo para telas maiores */
+}
+}
+@media (max-width: 768px) {
+            br {
+                display: none;
+            }
+        }
+  </style>
+</head>
+<body>
+  <div id="preloader"></div>
+  
+  <!-- Menu Fixo para Desktop -->
+  <nav class="menu-fixed">
+    <div class="container">
+      <div class="menu-items">
+        <a href="#about"><img src="img/sobre.png" width="120" height="45"></a>
+        <a href="#contact"><img src="img/equipe.png" width="120" height="45"></a>
+        <a href="#fly"><img src="img/contato.png" width="120" height="45"></a>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Menu de Toggle para Telas Pequenas -->
+  <div class="menu-toggle">
+   
+    <div class="menu-icon">
+     
+      <img style="display: block; float: right;" src="img/menu-icon.png" width="90" height="35">
+    </div>
+   
+    <div class="menu-dropdown" id="menuDropdown">
+          
+      <ul>
+        <li><a href="#about" onclick="toggleMenu()"><img src="img/sobre.png" width="120" height="45"></a></li>
+        <li><a href="#contact" onclick="toggleMenu()"><img src="img/equipe.png" width="120" height="45"></a></li>
+        <li><a href="#fly" onclick="toggleMenu()"><img src="img/contato.png" width="120" height="45"></a></li>
+
+      </ul>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <h1><img class="img-fluid" src="img/shimazutech.png" width="315" height="315"></h1>
+    <p><img class="img-fluid" src="img/text.png"></p>
+  </header>
+  <br><br>
+  <!-- About Section -->
+  <section id="about" class="about container">
+    <div class="row">
+      <div class="col-md-5">
+        <a href="https://www.youtube.com/embed/4QA6wcbEdiI?si=DhAYrx3dqTp23q14">
+          <iframe width="512" height="315" src="https://www.youtube.com/embed/4QA6wcbEdiI?si=DhAYrx3dqTp23q14" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"class="img-fluid custom-iframe" allowfullscreen></iframe>        </a>
+      </div>
+      <div class="col-md-7">
+          <br><br>
+        <h3 style="color: white; text-shadow: black 3px 3px 3px; text-align: right;"><img class="img-fluid" src="img/text2.png"></h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact container">
+    <h2 style="color: white; text-shadow: black 3px 3px 3px; font-size: 35px; text-align: center;">Equipe da Shimazu Tech</h2>
+
+    <div class="contact-row">
+      <div class="contact-item">
+
+        <div class="circle">
+          <img src="img/foto1.jpg" class="img-fluid" alt="Foto 1">
+        </div>        
+        <p style="color: white; text-shadow: black 3px 3px 3px; font-size: 18px;">Icaro Rodrigues Shimazu</p>
+        <p style="color: white; text-shadow: black 3px 3px 3px;">Desenvolvedor web</p>
+      </div>
+      <div class="contact-item">
+        <div class="circle">
+          <img src="img/imagem2.jpg" class="img-fluid" alt="Foto 2">
+        </div>
+        <p style="color: white; text-shadow: black 3px 3px 3px; font-size: 18px;">Texto de teste</p>
+        <p style="color: white; text-shadow: black 3px 3px 3px;">Teste descritivo</p>
+      </div>
+      <div class="contact-item">
+        <div class="circle">
+          <img src="img/imagem3.jpg" class="img-fluid" alt="Foto 3">
+        </div>
+        <p style="color: white; text-shadow: black 3px 3px 3px; font-size: 18px;">Texto de text</p>
+        <p style="color: white; text-shadow: black 3px 3px 3px;">Teste descritivo</p>
+      </div>
+    </div>
+  </section>
+  <!--Contato-->
+  <section id="fly" class="fly-contact">
+    <h2><img src="img/ce.png"></h2>
+    <form action="enviar.php" method="post" class="contact-form">
+      <label for="name"><img src="img/nome.png"></label>
+      <input type="text" placeholder="Digite o nome aqui" id="name" name="name" required>
+
+      <label for="email"><img src="img/email.png"></label>
+      <input type="email" placeholder="Digite o E-Mail aqui" id="email" name="email" required>
+
+      <label for="message"><img src="img/msg.png"></label>
+      <textarea id="message" placeholder="Digite a mensagem aqui" name="message" rows="5" required></textarea>
+
+      <button type="submit"><img src="img/send.png"></button>
+    </form>
+  </section>
+  <!-- Footer -->
+  <footer class="footer">
+    <p style="font-size: 20px;">Icaro Desenvolvedor Web</p>
+  </footer>
+
+  <!-- Scripts JavaScript -->
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script>
+    // Função para mostrar/esconder o menu de toggle
+    function toggleMenu() {
+      var menuDropdown = document.getElementById('menuDropdown');
+      menuDropdown.classList.toggle('open');
+    }
+  </script>
+  <script>document.addEventListener('DOMContentLoaded', function() {
+  const menuIcon = document.querySelector('.menu-icon');
+  const menuDropdown = document.querySelector('.menu-dropdown');
+
+  menuIcon.addEventListener('click', function() {
+    menuDropdown.classList.toggle('open');
+  });
+
+  document.addEventListener('click', function(event) {
+    if (!menuIcon.contains(event.target) && !menuDropdown.contains(event.target)) {
+      menuDropdown.classList.remove('open');
+    }
+  });
+});</script>
+<script>
+  function getParameterByName(name, url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+  }
+
+  if(getParameterByName('info') === 'error' && getParameterByName('msg') === '1') {
+      alert('Email enviado com sucesso!!');
+  }
+  if(getParameterByName('info') === 'error' && getParameterByName('msg') === '2'){
+    alert('Erro ao mandar o E-Mail')
+  }
+</script>
+<script>
+  // Remover o pré-loader após a página carregar
+  window.addEventListener('load', function() {
+    var preloader = document.getElementById('preloader');
+    preloader.style.display = 'none';
+    document.body.style.display = 'block';
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Função para ajustar o fundo ao rolar a página
+    function updateBackgroundPosition() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      document.documentElement.style.backgroundPosition = "center " + (scrollTop * 0.5) + "px";
+    }
+
+    // Adicionando o evento de rolagem
+    window.addEventListener("scroll", updateBackgroundPosition);
+    updateBackgroundPosition(); // Chamar a função inicialmente para ajustar o fundo
+  });
+</script>
+</body>
+</html>
